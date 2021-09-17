@@ -4,6 +4,7 @@
   "description": "Integrantes da Squad\r  Ghislain Batatu Kweyenda  \r  Luzanny Thaireny Ramirez \r  Severino Eyulu Armando \r  Roberto Fergus Quijada Campos",
   "main": "index.js",
   "scripts": {
+    "start":"nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
