@@ -1,13 +1,20 @@
 const express = require('express');
 const mongoose = require("mongoose")
-const swaggerUi = require('swagger-ui-express');
+// const swaggerUi = require('swagger-ui-express');
 
 const app = express();
+
+//importando o model
+const cardapio = require('./model/model')
 
 
 app.set('port', (process.env.PORT || 8081));
 
 app.use(express.json());
+
+//importando as rotas
+const routes = require('./routes/routes')
+routes(app);
 
 mongoose.connect('mongodb://localhost:27017/healthFood', { useNewUrlParser: true })
 
