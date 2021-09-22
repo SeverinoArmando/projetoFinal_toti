@@ -9,7 +9,6 @@ module.exports = (app)=>{
         .post(prato.cadastrar)
 
 //Buscando pelo Id
-
     app.route('/prato/:pratoId')
         .get(prato.buscarId)
         .put(prato.atualizar)

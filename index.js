@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 
 const app = express();
 
-//importando o model
+//requerindo o model
 const cardapio = require('./model/model')
 
 
@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 8081));
 
 app.use(express.json());
 
-//importando as rotas
+//requerindo as rotas
 const routes = require('./routes/routes')
 routes(app);
 
