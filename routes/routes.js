@@ -1,17 +1,14 @@
 
-module.exports = (app)=>{
-    var prato = require('../controller/controlModel')
+module.exports = (app) =>{
+    const prato = require('../controller/controlModel')
 
+    app.route('/pratos').get(prato.todosPratos)
+        
+    app.route('/pratos').post(prato.cadastrar)
 
-    //trabalhando na rota padrao
-    app.route('/')
-        .get(prato.todosPratos)
-        .post(prato.cadastrar)
+    app.route('/pratos/:pratoId').get(prato.buscarId)
 
-//Buscando pelo Id
-    app.route('/prato/:pratoId')
-        .get(prato.buscarId)
-        .put(prato.atualizar)
-        .delete(prato.deletar)
- 
+    app.route('/pratos/:pratoId').put(prato.atualizar)
+    
+    app.route('/pratos/:pratoId').delete(prato.deletar)
 }
