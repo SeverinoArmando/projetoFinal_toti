@@ -19,11 +19,11 @@ exports.todosPratos = (req,res)=>{
 
 exports.buscarId = (req,res)=>{
     Prato.findOne({"_id":req.params.PratoId},(erro,conteudo)=>{
-        if(erro){
-            res.send(erro)
+        if(!erro){
+            return res.status(200).json(conteudo)
         }
         else{
-            res.json(conteudo)
+            return res.status(400).json(erro)
         }
     })
 }

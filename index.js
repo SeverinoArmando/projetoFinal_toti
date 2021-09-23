@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require("mongoose")
-// const swaggerUi = require('swagger-ui-express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDoc= require('./swagger_output.json')
+
 
 const app = express();
 
@@ -29,3 +31,6 @@ db.once('open', function () {
         console.log(`App rodando na url http://localhost:${app.get('port')}`)
     })
 })
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
+require('./routes/routes')(app)
