@@ -6,10 +6,10 @@ const Prato = mongoose.model('Prato')
 exports.todosPratos = (req,res)=>{
     Prato.find({},(erro,conteudo)=>{
         if(erro){
-            return res.send(erro)
+            return res.status(400).json(erro)
         }
         else{
-            res.json(conteudo)
+            res.status(200).json(conteudo)
         }
     })
 }

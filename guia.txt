@@ -1,0 +1,29 @@
+tabelas interligadas
+
+filtro
+
+identificador do prato.
+
+cadastro de empresas(cliente)--tabela onde empresa se cadastram
+
+
+important(
+
+
+no post no momento da criação do prato, fazer validação, 
+header obrigatorio, Id do cliente[único], 
+so cadastrando quem já está cadastrado
+1-verificar a existencia do id do cliente.
+2-se existir, cria o prato vinculado ao id do cliente senao[mostrar erro(404-não encontrado) para cadastrar-se]
+3-
+
+--------------------------------------
+criar um post para registro do cliente. 
+um cliente pode se cadastrar uma vez
+id[unico], nova collection[cliente]
+
+
+-----------------------------------
+criar get para listar todos os pratos por id do cliente(nome do restaurante)
+
+)

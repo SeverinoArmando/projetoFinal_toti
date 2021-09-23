@@ -1,0 +1,76 @@
+
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "REST API healthFood" ,
+      "description": " Api criada com objectivo de gerenciar cardápios"
+    },
+    "host": "localhost:8081",
+    "basePath": "/",
+    "tags": [],
+    "schemes": [
+      "http"
+    ],
+    "consumes": "ADMINISTRADOR",
+    "produces": "HealhFood",
+    "paths": {
+      "/": {
+        "get": {
+          "tags": [],
+          "description": "MOSTRAR TODOS OS PRATOS",
+          "parameters": [],
+          "responses": {}
+        },
+        
+        "post": {
+          "tags": [],
+          "description": "CRIAR NOVO PRATO",
+          "parameters": [{"nome_do_prato":"feijao"}],
+          "responses": ""
+        }
+      },
+      "/prato/{pratoId}": {
+        "get": {
+          "tags": [],
+          "description": "",
+          "parameters": [
+            {
+              "name": "pratoId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        },
+        "put": {
+          "tags": [],
+          "description": "",
+          "parameters": [
+            {
+              "name": "pratoId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        },
+        "delete": {
+          "tags": [],
+          "description": "",
+          "parameters": [
+            {
+              "name": "pratoId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        }
+      }
+    },
+    "definitions": {}
+  }
