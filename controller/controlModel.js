@@ -13,7 +13,7 @@ exports.todosPratos = (req,res)=>{
         }
     })
 }
-
+ 
 
 //get by id
 
@@ -31,7 +31,7 @@ exports.buscarId = (req,res)=>{
 //criando o nosso post
 
 exports.cadastrar =(req,res)=>{
-    var inserir = new Prato(req.body)
+    let inserir = new Prato(req.body)
 
     inserir.save((erro,conteudo)=>{
         if(erro){

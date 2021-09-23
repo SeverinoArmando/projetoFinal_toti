@@ -2,11 +2,23 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 // nome_do_prato, igredientes, preço e foto
-var Prato = Schema({
-  nome_do_prato: { type: String },
-  ingredientes: { type: Array },
-  preco: {type: Number},
-  url_foto: { Type: String }
+const prato = Schema({
+  nome_do_prato: { 
+    type: String,
+    required: true
+    },
+  ingredientes: { 
+    type: Array,
+    required: true 
+    },
+  preco: {
+    type: Number,
+    required: true
+    },
+  url_foto: { 
+    type: String,
+    required: true 
+    }
 });
 
-module.exports = mongoose.model("Prato", Prato)
+module.exports = mongoose.model("Prato", prato)

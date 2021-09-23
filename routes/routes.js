@@ -8,10 +8,10 @@ module.exports = (app)=>{
         .get(prato.todosPratos)
         .post(prato.cadastrar)
 
-//Buscando pelo Id
+    //Buscando pelo Id
     app.route('/prato/:pratoId')
         .get(prato.buscarId)
         .put(prato.atualizar)
         .delete(prato.deletar)
  
-}
+} 

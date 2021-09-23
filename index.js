@@ -14,7 +14,7 @@ app.use(express.json());
 
 //requerindo as rotas
 const routes = require('./routes/routes')
-routes(app);
+routes(app); 
 
 mongoose.connect('mongodb://localhost/healthFood', { useNewUrlParser: true })
 
