@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var Prato = mongoose.model('Prato')
+const Prato = mongoose.model('Prato')
 
 //get all
 exports.todosPratos = (req,res)=>{
