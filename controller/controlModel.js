@@ -14,7 +14,6 @@ exports.todosPratos = (req,res)=>{
     })
 }
  
-
 //get by id
 
 exports.buscarId = (req,res)=>{

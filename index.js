@@ -8,6 +8,7 @@ const app = express();
 
 //requerindo o model
 const cardapio = require('./model/model')
+const cliente = require('./model/cliente')
 
 
 app.set('port', (process.env.PORT || 8081));
