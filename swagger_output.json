@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "REST API healthFood" ,
-    "description": " Api criada com objectivo de gerenciar cardápios"
+    "description": "API para gerenciar o app Healthfood"
   },
   "host": "localhost:8081",
   "basePath": "/",
@@ -12,7 +12,7 @@
     "http"
   ],
   "consumes": "ADMINISTRADOR",
-  "produces": "HealhFood",
+  "produces": "HealthFood",
   "paths": {
     "/": {
       "get": {
@@ -45,7 +45,7 @@
       },
       "put": {
         "tags": [],
-        "description": "",
+        "description": "ATUALIZAR PRATO",
         "parameters": [
           {
             "name": "pratoId",
@@ -58,7 +58,7 @@
       },
       "delete": {
         "tags": [],
-        "description": "",
+        "description": "DELETAR PRATO",
         "parameters": [
           {
             "name": "pratoId",
@@ -73,7 +73,7 @@
     "/u": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "LISTAR NOVA EMPRESA",
         "parameters": [],
         "responses": {
           "200": {
@@ -86,8 +86,14 @@
       },
       "post": {
         "tags": [],
-        "description": "",
-        "parameters": [],
+        "description": "CADASTRAR NOVA EMPRESA",
+        "parameters": [
+          {
+            "idCliente":"idCliente",
+            "CNPJ":"xxxxxxxxxx",
+            "url_foto":"vbnvbnvbnvnvbnvn.jpg"
+         }
+        ],
         "responses": {}
       }
     }
