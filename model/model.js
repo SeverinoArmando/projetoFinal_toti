@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-// nome_do_prato, igredientes, preço e foto
 const prato = Schema({
   //Baseando-se na collection do Cliente(Restaurante)
   idCliente:{
