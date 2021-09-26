@@ -18,7 +18,7 @@ exports.todosRestaurantes= (req,res)=>{
 
 
 exports.buscarId = (req,res)=>{
-    restaurante.findOne({"_id":req.params.idRest},(erro,conteudo)=>{
+    restaurante.findOne({"idRest":req.params.idRest},(erro,conteudo)=>{
         if(erro){
             res.send(erro)
         }

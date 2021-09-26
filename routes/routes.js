@@ -20,7 +20,7 @@ module.exports = (app)=>{
 
     //Buscando pelo id
     app.route('/restaurante/:idRest')
-        .get(restaurante.idRest)
+        .get(restaurante.buscarId)
         .put(restaurante.atualizar)
-        .delete(restaurant.deletar)
+        .delete(restaurante.deletar)
 }   
