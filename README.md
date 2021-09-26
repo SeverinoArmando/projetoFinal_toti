@@ -1,24 +1,41 @@
-# projetoFinal_toti
+# Projeto Final - Back End.  _Toti.diversidade
 
- Integrantes da Squad
- Ghislain Batatu Kweyenda  
- Luzanny Thaireny Ramirez 
- Severino Eyulu Armando 
- Roberto Fergus Quijada Campos 
-
+  ## Integrantes da Squad
+  
+  
+  Ghislain Batatu Kweyenda  
  
  
- ## Restaurante HealthFood  Descrição do Projeto:  
+  Luzanny Thaireny Ramirez 
  
- Para a empresa HealthFood, que Precisa disponibilizar cardápios de produtos para os clientes, o HealthFood é um aplicativo de gerenciamento de cardápios saudáveis, que permite pesquisar, inserir, atualizar e deletar os itens do cardápio.
  
-## Estórias da Empresa  - 
+  Severino Eyulu Armando 
+ 
+ 
+  A. Roberto Fergus Quijada Campos 
+ 
+ 
+ 
+## Applicativo HealthFood - Descrição do Projeto:  
+ 
+Desenvolvimento do backend e API REST de uma webapp de nome HealthFood em Node.js, Express e Mongo.db, o escopo do modelo e projeto contempla os cadastros de empresas e os seus cardápios deixando fora aos clientes finais e as ordens deles. A HelathFood é um hub que ofereçe a oportunidade a restaurantes locales para se cadastrar e disponibilizar seus produtos no e-commerce. Entre as opçãos disponíveis na API-REST é possível se cadastrar na app como restaurante/empresa, atualizar informações, também pesquisar, inserir, atualizar e deletar os itens dos seus cardápios.
+ 
+## Estórias do Usuário  
 
-Eu como empresa de nome HealthFood desejo conseguir cadastrar produtos no cardápio, com as seguintes informações: 
+- Os restaurantes cadastram-se na app para ofercer seus produtos, cardápio. Também podem atualizar as suas informações e excluir seu cadastro.
 
-### nome_do_prato, igredientes, preço e foto.
+- O HealthFood consegui mostrar todos os restaurantes/empresas cadastradas e permitir a busqueda por restaurante.
 
-*Eu como empresa de nome HealthFood desejo conseguir atualizar um ou vários produtos cadatrado no cardápio. 
-*Eu como empresa de nome HealthFood desejo conseguir buscar um ou vários itens cadatrado.
-*Eu como empresa de nome HealthFood desejo conseguir deletar um ou vários produtos cadastrados.
-*Eu como empresa de nome HealthFood desejo conseguir listar os produtos cadatrados.
+- Os restaurantes cadastram seus produtos no seu cardápio, com as seguintes informações: nome doprato, igredientes, preço, disponibilidade, categoria/tags e foto.
+
+- Os restaurantes atualizam, buscam e deletam um ou vários produtos cadastrados no cardápio.
+
+- Os compradores tem acesso a busquedas avanzadas basadas nas suas preferencias.
+
+- ~~Eu como empresa de nome HealthFood desejo conseguir atualizar um ou vários produtos cadastrado no cardápio.---~~
+
+- ~~Eu como empresa de nome HealthFood desejo conseguir buscar um ou vários itens cadatrado.~~
+
+- ~~Eu como empresa de nome HealthFood desejo conseguir deletar um ou vários produtos cadastrados.~~
+
+- ~~Eu como empresa de nome HealthFood desejo conseguir listar os produtos cadatrados.~~
