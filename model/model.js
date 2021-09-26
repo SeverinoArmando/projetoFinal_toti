@@ -3,11 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const prato = Schema({
   //Baseando-se na collection do Cliente(Restaurante)
-  idCliente:{
-    type:String,
-    required:true
+  idRest:{
+    type: String,
+    required: true
   },
-
   nome_do_prato: { 
     type: String,
     required: true
