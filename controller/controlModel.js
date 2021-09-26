@@ -17,7 +17,21 @@ exports.todosPratos = (req,res)=>{
 //get by id
 
 exports.buscarId = (req,res)=>{
-    Prato.findOne({"_id":req.params.PratoId},(erro,conteudo)=>{
+    Prato.findOne({_id:req.params.PratoId},(erro,conteudo)=>{
+        if(erro){
+            res.send(erro)
+        }
+        else{
+            res.json(conteudo)
+        }
+    })
+}
+
+exports.buscarIngred = (req,res)=>{
+    ingred = req.param.ingred
+    ingred = "milho"
+    Prato.find({ ingredientes: { "$in": [ingred]}},(erro,conteudo)=>{
+    //Prato.find({ ingredientes: /*req.params.ingred*/ ingred },(erro,conteudo)=>{
         if(erro){
             res.send(erro)
         }

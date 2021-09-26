@@ -1,4 +1,4 @@
-module.exports = (app)=>{
+module.exports = (app) => {
     var prato = require('../controller/controlModel')
     var restaurante = require('../controller/restaurante')
 
@@ -13,6 +13,10 @@ module.exports = (app)=>{
         .get(prato.buscarId)
         .put(prato.atualizar)
         .delete(prato.deletar)
+
+    app.route('/prato/ingrediente/:ingred')
+        .get(prato.buscarIngred)
+
 
     app.route('/restaurante')
         .get(restaurante.todosRestaurantes)
