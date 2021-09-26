@@ -8,12 +8,12 @@ const restaurante = new mongoose.Schema({
     required:true
   },
   
-  CNPJ:{
+  cnpj:{
     type:String,
     required:true
   },
 
-  url_foto: { 
+  url_img_logo: { 
     type: String,
     required: true 
     }
