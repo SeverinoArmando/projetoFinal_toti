@@ -95,7 +95,33 @@
          }
         ],
         "responses": {}
-      }
+      },
+      "put": {
+        "tags": [],
+        "description": "ATUALIZAR INFORMAÇÃO DO RESTAURANTE",
+        "parameters": [
+          {
+            "name": "idRest",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "tags": [],
+        "description": "EXCLUIR RESTAURANTE",
+        "parameters": [
+          {
+            "name": "idRest",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+    }
     }
   },
   "definitions": {}

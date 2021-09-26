@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const restaurante = require('../model/restaurante');
 
 const Restaurante = mongoose.model('Restaurante')
 
@@ -15,10 +16,9 @@ exports.todosRestaurantes= (req,res)=>{
 }
  
 
-/*
 
 exports.buscarId = (req,res)=>{
-    Prato.findOne({"_id":req.params.PratoId},(erro,conteudo)=>{
+    restaurante.findOne({"_id":req.params.idRest},(erro,conteudo)=>{
         if(erro){
             res.send(erro)
         }
@@ -26,7 +26,7 @@ exports.buscarId = (req,res)=>{
             res.json(conteudo)
         }
     })
-}*/
+}
 
 //criando o nosso post
 
@@ -43,10 +43,10 @@ exports.cadastrar =(req,res)=>{
     })
 }
 
-/*/criando o put/atualizar
+//criando o put/atualizar
 
 exports.atualizar = (req,res)=>{
-        Prato.findOneAndUpdate({_id:req.params.PratoId}, req.body,{new:true}, (erro,conteudo)=>{
+        Restaurante.findOneAndUpdate({_id:req.params.idRest}, req.body,{new:true}, (erro,conteudo)=>{
             if(erro){
                 res.send(erro)
             }
@@ -54,4 +54,14 @@ exports.atualizar = (req,res)=>{
                 res.json(conteudo)
             }
         })
-}*/
+}
+
+exports.deletar = (req,res)=>{
+    Restaurante.deleteOne({_id:req.params.idRest},(erro,conteudo)=>{
+        if(erro){
+            res.send(erro)
+        }else{
+            res.json("Restaurante excluido com sucesso")
+        }
+    })
+}
