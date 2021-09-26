@@ -17,5 +17,10 @@ module.exports = (app)=>{
     app.route('/restaurante')
         .get(restaurante.todosRestaurantes)
         .post(restaurante.cadastrar)
- 
+
+    //Buscando pelo id
+    app.route('/restaurante/:idRest')
+        .get(restaurante.idRest)
+        .put(restaurante.atualizar)
+        .delete(restaurant.deletar)
 }   
