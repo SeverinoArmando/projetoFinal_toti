@@ -70,10 +70,10 @@
         "responses": {}
     }
   },
-    "/u": {
+    "/restaurante": {
       "get": {
         "tags": [],
-        "description": "LISTAR NOVA EMPRESA",
+        "description": "LISTAR EMPRESAS",
         "parameters": [],
         "responses": {
           "200": {
@@ -86,7 +86,7 @@
       },
       "post": {
         "tags": [],
-        "description": "CADASTRAR NOVA EMPRESA",
+        "description": "CADASTRAR NOVO RESTAURANTE",
         "parameters": [
           {
             "idCliente":"idCliente",

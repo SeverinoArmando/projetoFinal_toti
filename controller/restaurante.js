@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const Cliente = mongoose.model('Cliente')
+const Restaurante = mongoose.model('Restaurante')
 
 //get all
-exports.todosClientes= (req,res)=>{
-    Cliente.find({},(erro,conteudo)=>{
+exports.todosRestaurantes= (req,res)=>{
+    Restaurante.find({},(erro,conteudo)=>{
         if(erro){
             return res.status(400).json(erro)
         }
@@ -31,7 +31,7 @@ exports.buscarId = (req,res)=>{
 //criando o nosso post
 
 exports.cadastrar =(req,res)=>{
-    let inserir = new Cliente(req.body)
+    let inserir = new Restaurante(req.body)
 
     inserir.save((erro,conteudo)=>{
         if(erro){

@@ -1,6 +1,6 @@
 module.exports = (app)=>{
     var prato = require('../controller/controlModel')
-    var cliente = require('../controller/cliente')
+    var restaurante = require('../controller/restaurante')
 
 
     //trabalhando na rota padrao
@@ -14,8 +14,8 @@ module.exports = (app)=>{
         .put(prato.atualizar)
         .delete(prato.deletar)
 
-    app.route('/u')
-        .get(cliente.todosClientes)
-        .post(cliente.cadastrar)
+    app.route('/restaurante')
+        .get(restaurante.todosRestaurantes)
+        .post(restaurante.cadastrar)
  
 }   

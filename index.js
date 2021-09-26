@@ -8,7 +8,7 @@ const app = express();
 
 //requerindo o model
 const cardapio = require('./model/model')
-const cliente = require('./model/cliente')
+const restaurante = require('./model/restaurante')
 
 
 app.set('port', (process.env.PORT || 8081));

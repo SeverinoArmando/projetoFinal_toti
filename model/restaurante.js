@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 //const Schema = mongoose.Schema;
-const cliente = new mongoose.Schema({
+const restaurante = new mongoose.Schema({
 
-  idCliente:{
+  idRest:{
     type:String,
     required:true
   },
@@ -19,4 +19,4 @@ const cliente = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Cliente', cliente)
+module.exports = mongoose.model('Restaurante', restaurante)
