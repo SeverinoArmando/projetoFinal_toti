@@ -31,11 +31,3 @@ Desenvolvimento do backend e API REST de uma webapp de nome HealthFood em Node.j
 - Os restaurantes atualizam, buscam e deletam um ou vários produtos cadastrados no cardápio.
 
 - Os compradores tem acesso a busquedas avanzadas basadas nas suas preferencias.
-
-- ~~Eu como empresa de nome HealthFood desejo conseguir atualizar um ou vários produtos cadastrado no cardápio.---~~
-
-- ~~Eu como empresa de nome HealthFood desejo conseguir buscar um ou vários itens cadatrado.~~
-
-- ~~Eu como empresa de nome HealthFood desejo conseguir deletar um ou vários produtos cadastrados.~~
-
-- ~~Eu como empresa de nome HealthFood desejo conseguir listar os produtos cadatrados.~~
