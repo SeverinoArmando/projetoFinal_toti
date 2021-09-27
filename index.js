@@ -7,7 +7,7 @@ const swaggerDoc = require('./swagger_output.json')
 const app = express();
 
 //requerindo o model
-const cardapio = require('./model/model')
+const cardapio = require('./model/prato')
 const restaurante = require('./model/restaurante')
 
 

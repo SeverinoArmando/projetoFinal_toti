@@ -4,7 +4,7 @@ module.exports = (app) => {
 
 
     //trabalhando na rota padrao
-    app.route('/')
+    app.route('/prato')
         .get(prato.todosPratos)
         .post(prato.cadastrar)
 
@@ -27,4 +27,8 @@ module.exports = (app) => {
         .get(restaurante.buscarId)
         .put(restaurante.atualizar)
         .delete(restaurante.deletar)
+
+
+    app.route('/restaurante/:idRestaurante/prato/:prato')
+    .get(prato.buscarPratos)
 }   

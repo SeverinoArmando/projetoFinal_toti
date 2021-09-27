@@ -40,8 +40,22 @@ exports.buscarIngred = (req,res)=>{
         }
     })
 }
+ 
+exports.buscarPratos = (req,res) => {
+    const prato = req.params.prato
+    const restaurante = req.params.idRestaurante
 
-//criando o nosso post
+    Prato.find({ nome_do_prato: new RegExp(prato, 'i'), idRestaurante: restaurante}, (erro,conteudo)=>{
+        if(erro) {
+            res.send(erro)
+        }
+        else{
+            res.json(conteudo)
+        }
+    })
+
+}
+ 
 
 exports.cadastrar =(req,res)=>{
     let inserir = new Prato(req.body)
