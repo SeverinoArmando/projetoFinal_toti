@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    var prato = require('../controller/controlModel')
+    var prato = require('../controller/prato')
     var restaurante = require('../controller/restaurante')
 
 
