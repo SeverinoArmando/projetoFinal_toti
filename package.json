@@ -1,0 +1,28 @@
+{
+  "name": "projetoFinal_toti",
+  "version": "1.0.0",
+  "description": "Integrantes da Squad\r  Ghislain Batatu Kweyenda  \r  Luzanny Thaireny Ramirez \r  Severino Eyulu Armando \r  Roberto Fergus Quijada Campos",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeverinoArmando/projetoFinal_toti.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeverinoArmando/projetoFinal_toti/issues"
+  },
+  "homepage": "https://github.com/SeverinoArmando/projetoFinal_toti#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.6",
+    "nodemon": "^2.0.12",
+    "swagger-autogen": "^2.11.2",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
