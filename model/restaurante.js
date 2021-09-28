@@ -1,22 +1,24 @@
 const mongoose = require('mongoose');
 
-//const Schema = mongoose.Schema;
 const restaurante = new mongoose.Schema({
-
-  idRest:{
-    type:String,
-    required:true
+  name: {
+    type: String,
+    required: true
   },
-  
-  cnpj:{
-    type:String,
-    required:true
+  address: {
+    type: String,
+    required: true
   },
-
-  url_img_logo: { 
+  cnpj: {
+    type: String,
+    required: true
+  },
+  url_img_logo: {
     type: String,
     required: true 
-    }
+  }
+}, {
+  timestamps: true
 });
 
 module.exports = mongoose.model('Restaurante', restaurante)
