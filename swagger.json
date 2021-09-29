@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Com essa API é possível a empresa ou cliente se cadastrar, cadastrar os seus pratos e monatr seu cardápio. Buscar todos os dados de cadastro, tanto os pratos como o usuário pelo Id gerado",
+    "description": "Com essa API é possível a empresa ou cliente se cadastrar, cadastrar os seus pratos e montar seu cardápio. Também é possível buscar todos os dados de cadastro, tanto os pratos como o usuário pelo Id gerado",
     "version": "1.0.0",
     "title": "Gerenciamento de Cardápio[HealthFood]",
     "contact": {
@@ -57,19 +57,17 @@
         }
       },"get": {
         "tags": ["Cadastros"],
+        "summary":"Visualizar todas as Empresas Cadatradas",
         "description": "Nessa Rota será retornada todas as Empresas Cadastradas na Base de Dados",
         "responses": {
          
           "400":{
-            "description":"Dados não encontardo"
+            "description":"Dados não encontrado"
           },
           "200":{
             "description":"Ok"
           }, "302":{
-            "description":"Encontrado",
-            "schema": {
-              "$ref": "#/components/schemas/cadastro da Empresa"
-            }
+            "description":"Encontrado"
           }
         }
       }
@@ -79,15 +77,15 @@
         "tags": [
           "Cadastros"
         ],
-        "summary": "Buscando Valor Cadastrado Pelo Id",
-        "description": "Retornará somente o valor buscado",
+        "summary": "Buscar Valor Cadastrado Pelo Id",
+        "description": "Retornará somente o valor procurado",
         "operationId": "CadastroId",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "CadastroId",
+            "name": "Id da Empresa",
             "in": "path",
             "description": "Cadastro a ser retornado",
             "required": true,
@@ -111,8 +109,8 @@
         "tags": [
           "Cadastros"
         ],
-        "summary": "Atualizando cadastro",
-        "description": "Nessa rota é possível atualizar os dados do cadastro",
+        "summary": "Atualizar cadastro",
+        "description": "Nessa rota é possível atualizar dados do cadastro",
         "operationId": "CadastroId",
         "consumes": [
           "application/json"
@@ -123,7 +121,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "CadastroId",
+            "name": "Id da Empresa",
             "description": "Ordem de como os dados devem ser inseridos",
             "required": true,
             "type":"string"
@@ -131,7 +129,7 @@
           {
             "in": "body",
             "name": "Corpo",
-            "description": "Ordem de como os dados devem ser inseridos",
+            "description": "Edite os campo desejado. *Atenção:  Preencha todos os campos ou elimine o que não pretendes modificar*",
             "schema": {
               "$ref": "#/components/schemas/cadastro da Empresa",
               "type":"string",
@@ -153,10 +151,10 @@
         },
         "responses": {
           "400": {
-            "description": "Invalid ID supplied"
+            "description": "Id inválido"
           },
-          "404": {
-            "description": "Pet not found"
+          "201": {
+            "description": "Cadastro Atualizado"
           },
           "405": {
             "description": "Validation exception"
@@ -167,7 +165,7 @@
         "tags": [
           "Cadastros"
         ],
-        "summary": "Eliminando um registro",
+        "summary": "Eliminar cadastro pelo Id",
         "description": "",
         "operationId": "CadastroId",
         "produces": [
@@ -176,9 +174,9 @@
         "parameters": [
           
           {
-            "name": "CadastroId",
+            "name": "Id da Empresa",
             "in": "path",
-            "description": "Eliminando Cadastro pelo ID",
+            "description": "Eliminar Cadastro utilizando o Id",
             "required": true,
             "type": "string"
           }
@@ -190,8 +188,8 @@
           "404": {
             "description": "Usuario não eoncontrado"
           },
-          "200":{
-            "description":"Tudo ok"
+          "202":{
+            "description":"Eliminado"
           }
         }
       }
@@ -202,8 +200,8 @@
       "tags": [
         "Cardápio"
       ],
-      "summary": "Cadastrar Empresa",
-      "description": "Nessa rota é possível cadastrar-se seus pratos",
+      "summary": "Cadastrar Prato",
+      "description": "Nessa rota é possível cadastrar seu prato",
       "operationId": "PratoId",
       "consumes": [
         "application/json"
@@ -215,26 +213,27 @@
           {
             "in": "body",
             "name": "Inserção dos Dados",
-            "description": "Ordem de como os dados devem ser inseridos. Atenção: No nome Usuario colocar O Id da Empresa",
+            "description": "Ordem de como os dados devem ser inseridos. *Atenção: No nome usuario, deve colocar-se o Id da Empresa*",
             "schema": {
               "$ref": "#/element/schemas/cadastro de pratos"
             }
         }
       ],
       "responses": {
-        "400": {
-          "description": "Erro nos campos"
+        "406": {
+          "description": "Não aceite.Tente novamente"
         },
         "201": {
-          "description": "Cadastro Criado Com Sucesso..."
+          "description": "Cadastrado Com Sucesso..."
         }
       }
     },"get": {
       "tags": ["Cardápio"],
-      "description": "Nessa Rota será retornada todas as Empresas Cadastradas na Base de Dados",
+      "summary":"Visualizar pratos cadastrados e seus respectivos cadastrantes, Empresa ou Usuário",
+      "description": "Nessa Rota será retornada todas os Pratos cadastros pela Empresa",
       "responses": {
        
-        "400":{
+        "404":{
           "description":"Dados não encontardo"
         },
         "200":{
@@ -250,15 +249,15 @@
       "tags": [
         "Cardápio"
       ],
-      "summary": "Buscando Valor Cadastrado Pelo Id",
-      "description": "Retornará somente o valor desejado",
+      "summary": "Buscar Prato cadastrado uasndo o Id",
+      "description": "Retornará somente o prato desejado com os dados do usuário cadastrante",
       "operationId": "PratoId",
       "produces": [
         "application/json"
       ],
       "parameters": [
         {
-          "name": "PratoId",
+          "name": "Id do Prato",
           "in": "path",
           "description": "Será retornado apenas um valor",
           "required": true,
@@ -282,8 +281,8 @@
       "tags": [
         "Cardápio"
       ],
-      "summary": "Atualizando Prato",
-      "description": "Nessa rota é possível atualizar os pratos cadastrados",
+      "summary": "Atualizar Prato",
+      "description": "Nessa rota é possível atualizar os pratos cadastrados usando o Id do prato",
       "operationId": "PratoId",
       "consumes": [
         "application/json"
@@ -294,7 +293,7 @@
       "parameters": [
         {
           "in": "path",
-          "name": "PratoId",
+          "name": "Id do Prato",
           "description": "Ordem de como os dados devem ser inseridos",
           "required": true,
           "type":"string"
@@ -302,7 +301,7 @@
         {
           "in": "body",
           "name": "Corpo",
-          "description": "Ordem de como os dados devem ser inseridos",
+          "description": "Edite os campo desejado. *Atenção: Preencha todos os campos ou elimine o que não pretendes modificar*",
           "schema": {
             "$ref": "#/element/schemas/cadastro de pratos",
             "type":"string",
@@ -310,31 +309,15 @@
           }
         }
       ],
-      "examples":{
-        "cadastro":{
-          "value":{
-              "nome_do_prato":"Medalhões com batata muro",
-              "ingredientes":[
-                  "Batata rena",
-                  "lombo de vaca aos cubos",
-                  "manteiga","etc.."
-              ],
-              "preco":19.85,
-              "quantidade":12,
-              "url_da_foto":"https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-              "data":"2021-09-27"
-          }
-        }
-      },
       "responses": {
-        "400": {
-          "description": "Id Inválido"
+        "202": {
+          "description": "Prato atualizado"
         },
         "404": {
           "description": "Prato não encontrado"
         },
         "405": {
-          "description": "Exceçaõ na validação"
+          "description": "Algo deu errado"
         }
       }
     },
@@ -342,8 +325,8 @@
       "tags": [
         "Cardápio"
       ],
-      "summary": "Eliminando um registro",
-      "description": "Eliminando um determinado prato do cardápio",
+      "summary": "Eliminar prato cadastrado",
+      "description": "Eliminar um determinado prato do cardápio",
       "operationId": "PratoId",
       "produces": [
         "application/json"
@@ -351,9 +334,9 @@
       "parameters": [
         
         {
-          "name": "PratoId",
+          "name": "Id do Prato",
           "in": "path",
-          "description": "Eliminando Prato pelo ID",
+          "description": "Eliminar Prato pelo ID",
           "required": true,
           "type": "string"
         }
@@ -362,8 +345,8 @@
         "400": {
           "description": "Id Inválido"
         },
-        "404": {
-          "description": "Usuario não eoncontrado"
+        "304": {
+          "description": "Não modificado"
         },
         "200":{
           "description":"Tudo ok"
@@ -388,10 +371,6 @@
           },
           "email":{
             "type":"string"
-          },
-          "data":{
-            "type":"Data",
-            "default":"Data da inserção"
           }
         }
       }
@@ -409,7 +388,7 @@
             "type": "string"
             },
           "ingredientes": { 
-            "type": "string" 
+            "type": "array" 
             },
           "preco": {
             "type": "number",

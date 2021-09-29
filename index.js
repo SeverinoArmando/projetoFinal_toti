@@ -11,9 +11,11 @@ const cardapio = require('./model/prato')
 const inserindo = require('./model/cadastro')
 
 
+
 app.set('port', (process.env.PORT || 8081));
 
 app.use(express.json());
+
 
 //Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
@@ -36,6 +38,6 @@ db.once('open', function () {
     console.log('Conectado com sucesso ao Banco de Dados')
 
     app.listen(app.get('port'), function () {
-        console.log(`App rodando na url http://localhost:${app.get('port')}`)
+        console.log(`App rodando na url http://localhost:${app.get('port')}/cadastros`)
     })
 })

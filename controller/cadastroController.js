@@ -17,7 +17,6 @@ exports.todosCadastros = async(req,res)=>{
  
 
 //get by id
-
 exports.buscarId =(req,res)=>{
 
     // try{
@@ -60,7 +59,7 @@ exports.atualizar = (req,res)=>{
                 res.status(400).send(erro)
             }
             else{
-                res.status(302).json({conteudo})
+                res.status(201).json({conteudo})
             }
         })
 }
@@ -72,7 +71,7 @@ exports.deletar = (req,res)=>{
         if(erro){
             res.status(400).send(erro)
         }else{
-            res.status(201).json("Cadastro eliminado com sucesso")
+            res.status(202).json("Cadastro eliminado com sucesso")
         }
     })
 }

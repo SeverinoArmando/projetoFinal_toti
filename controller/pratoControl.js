@@ -42,7 +42,7 @@ exports.cadastrar =(req,res)=>{
 
     inserir.save((erro,conteudo)=>{
         if(erro){
-            res.send(erro)
+            res.status(406).send({erro})
         }
         else{
             res.status(201).json({conteudo})
@@ -56,10 +56,10 @@ exports.cadastrar =(req,res)=>{
 exports.atualizar = (req,res)=>{
         Prato.findOneAndUpdate({_id:req.params.PratoId}, req.body,{new:true}, (erro,conteudo)=>{
             if(erro){
-                res.send(erro)
+                res.status(404).send(erro)
             }
             else{
-                res.json("Prato atualizado com Sucess... ")
+                res.status(202).json("Prato atualizado com Sucess... ")
             }
         })
 }
@@ -69,9 +69,9 @@ exports.atualizar = (req,res)=>{
 exports.deletar = (req,res)=>{
     Prato.deleteOne({_id:req.params.PratoId},(erro,conteudo)=>{
         if(erro){
-            res.send(erro)
+            res.status(304).send(erro)
         }else{
-            res.json("Prato eliminado com sucesso")
+            res.status(200).json("Prato eliminado com sucesso")
         }
     })
 }

@@ -1,6 +1,6 @@
 
 module.exports = (app)=>{
-    var prato = require('../controller/controlModel')
+    var prato = require('../controller/pratoControl')
 
 
     //trabalhando na rota padrao
