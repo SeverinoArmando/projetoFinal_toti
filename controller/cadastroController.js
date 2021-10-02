@@ -11,7 +11,7 @@ exports.todosCadastros = async(req,res)=>{
 
     }catch(erro){
 
-        return res.status(404).send({erro})
+        return res.status(404).send({erro:"Dados não eoncontrado... tente Cadastrar algum!"})
     }
 }
  
@@ -19,16 +19,9 @@ exports.todosCadastros = async(req,res)=>{
 //get by id
 exports.buscarId =(req,res)=>{
 
-    // try{
-    //     const Usuario = await Cadastro.findOne({"_id":req.params.CadastroId});
-
-    //     res.status(304).send({Usuario})
-    // }catch(erro){
-    //     res.status(404).send({erro})
-    // }
     const Usuario =  Cadastro.findOne({"_id":req.params.CadastroId},(erro,Empresa_Cadastrada)=>{
         if(erro){
-            res.status(404).json(erro)
+            res.status(404).json({erro:"Cadastro não eoncontrado! Tente novamente..."})
         }
         else{
             res.status(302).send({Empresa_Cadastrada})
@@ -41,12 +34,12 @@ exports.buscarId =(req,res)=>{
 exports.cadastrar =(req,res)=>{
     let inserir = new Cadastro(req.body)
 
-    inserir.save((erro,conteudo)=>{
+    inserir.save((erro,cadastrado)=>{
         if(erro){
-            res.status(400).json(erro)
+            res.status(400).json({erro:"Erro nos parâmetros! Tente novamente..."})
         }
         else{
-            res.status(201).json(conteudo)
+            res.status(201).json({cadastrado})
         }
     })
 }
@@ -54,12 +47,16 @@ exports.cadastrar =(req,res)=>{
 //criando o put/atualizar
 
 exports.atualizar = (req,res)=>{
-        Cadastro.findOneAndUpdate({_id:req.params.CadastroId}, req.body,{new:true}, (erro,conteudo)=>{
+        Cadastro.findOneAndUpdate({_id:req.params.CadastroId}, req.body,{new:true}, (erro,status)=>{
             if(erro){
-                res.status(400).send(erro)
+                res.status(400).send({
+                    erro: "Falha ao Atualizar o Cadastro... Tente novamente"
+                })
             }
             else{
-                res.status(201).json({conteudo})
+               return res.status(201).send({
+                    status:"Cadastro Atualizado Com Sucesso"
+                })
             }
         })
 }
@@ -69,7 +66,7 @@ exports.atualizar = (req,res)=>{
 exports.deletar = (req,res)=>{
     Cadastro.deleteOne({_id:req.params.CadastroId},(erro,conteudo)=>{
         if(erro){
-            res.status(400).send(erro)
+            res.status(400).send({erro:"Erro nos parâmetros! Tente novamente..."})
         }else{
             res.status(202).json("Cadastro eliminado com sucesso")
         }

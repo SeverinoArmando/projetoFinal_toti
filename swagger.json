@@ -85,7 +85,7 @@
         ],
         "parameters": [
           {
-            "name": "Id da Empresa",
+            "name": "CadastroId",
             "in": "path",
             "description": "Cadastro a ser retornado",
             "required": true,
@@ -121,7 +121,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Id da Empresa",
+            "name": "CadastroId",
             "description": "Ordem de como os dados devem ser inseridos",
             "required": true,
             "type":"string"
@@ -174,7 +174,7 @@
         "parameters": [
           
           {
-            "name": "Id da Empresa",
+            "name": "CadastroId",
             "in": "path",
             "description": "Eliminar Cadastro utilizando o Id",
             "required": true,
@@ -212,8 +212,9 @@
       "parameters": [
           {
             "in": "body",
-            "name": "Inserção dos Dados",
+            "name": "body",
             "description": "Ordem de como os dados devem ser inseridos. *Atenção: No nome usuario, deve colocar-se o Id da Empresa*",
+            "required":true,
             "schema": {
               "$ref": "#/element/schemas/cadastro de pratos"
             }
@@ -257,7 +258,7 @@
       ],
       "parameters": [
         {
-          "name": "Id do Prato",
+          "name": "PratoId",
           "in": "path",
           "description": "Será retornado apenas um valor",
           "required": true,
@@ -293,7 +294,7 @@
       "parameters": [
         {
           "in": "path",
-          "name": "Id do Prato",
+          "name": "PratoId",
           "description": "Ordem de como os dados devem ser inseridos",
           "required": true,
           "type":"string"
@@ -303,9 +304,7 @@
           "name": "Corpo",
           "description": "Edite os campo desejado. *Atenção: Preencha todos os campos ou elimine o que não pretendes modificar*",
           "schema": {
-            "$ref": "#/element/schemas/cadastro de pratos",
-            "type":"string",
-            "required": true
+            "$ref": "#/element/schemas/cadastro de pratos"
           }
         }
       ],
@@ -334,7 +333,7 @@
       "parameters": [
         
         {
-          "name": "Id do Prato",
+          "name": "PratoId",
           "in": "path",
           "description": "Eliminar Prato pelo ID",
           "required": true,
@@ -388,7 +387,7 @@
             "type": "string"
             },
           "ingredientes": { 
-            "type": "array" 
+            "type": ["string"] 
             },
           "preco": {
             "type": "number",

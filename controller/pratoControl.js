@@ -9,7 +9,7 @@ exports.todosPratos =async (req,res)=>{
 
         return res.status(302).send({Pratos_Cadastrados})
     }catch(erro){
-        return res.status(404).send({erro})
+        return res.status(404).send({erro:"Nenhum prato encontrado... cadastre algum!"})
     }
 }
  
@@ -18,21 +18,14 @@ exports.todosPratos =async (req,res)=>{
 
 exports.buscarId = async (req,res)=>{
 
-    // Prato.findOne({"_id":req.params.PratoId},(erro,conteudo)=>{
-    //     if(erro){
-    //         res.status(404).send(erro)
+ 
     try{
         const Pratos = await Prato.findOne({"_id":req.params.PratoId}).populate("usuario")
 
         res.status(302).send({Pratos})
     }catch(erro){
-        res.status(404).send({erro})
+        res.status(404).send({erro:"Prato não eonctrado! Tente novamente..."})
     }
-    //     }
-    //     else{
-    //         res.status(302).json(conteudo)
-    //     }
-    // })
 }
 
 //criando o nosso post
@@ -40,12 +33,12 @@ exports.buscarId = async (req,res)=>{
 exports.cadastrar =(req,res)=>{
     let inserir = new Prato(req.body)
 
-    inserir.save((erro,conteudo)=>{
+    inserir.save((erro,cadastrado)=>{
         if(erro){
-            res.status(406).send({erro})
+            res.status(406).send({erro :"Falha ao Cadastrar-se! Tente novamente"})
         }
         else{
-            res.status(201).json({conteudo})
+            res.status(201).json({cadastrado})
         }
     }
     )
@@ -56,10 +49,10 @@ exports.cadastrar =(req,res)=>{
 exports.atualizar = (req,res)=>{
         Prato.findOneAndUpdate({_id:req.params.PratoId}, req.body,{new:true}, (erro,conteudo)=>{
             if(erro){
-                res.status(404).send(erro)
+                res.status(404).send({erro:"Não foi possível encontrar o prato Cadastrado"})
             }
             else{
-                res.status(202).json("Prato atualizado com Sucess... ")
+                res.status(202).json("Prato atualizado com Sucesso... ")
             }
         })
 }
@@ -69,7 +62,7 @@ exports.atualizar = (req,res)=>{
 exports.deletar = (req,res)=>{
     Prato.deleteOne({_id:req.params.PratoId},(erro,conteudo)=>{
         if(erro){
-            res.status(304).send(erro)
+            res.status(304).send({erro:"Não foi possível eliminar o prato identificado"})
         }else{
             res.status(200).json("Prato eliminado com sucesso")
         }
