@@ -54,7 +54,7 @@ exports.atualizar = (req,res)=>{
                 })
             }
             else{
-               return res.status(302).send({atualizado})
+               return res.status(201).send({atualizado})
             }
         })
 }

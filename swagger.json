@@ -240,7 +240,8 @@
         },
         "200":{
           "description":"Ok"
-        }, "302":{
+        }, 
+        "302":{
           "description":"Encontrado"
         }
       }
@@ -294,15 +295,9 @@
       ],
       "parameters": [
         {
-          "in": "path",
-          "name": "PratoId",
-          "description": "Ordem de como os dados devem ser inseridos",
-          "required": true,
-          "type":"string"
-        },
-        {
           "in": "body",
           "name": "Corpo",
+          "required":true,
           "description": "Edite os campo desejado. *Atenção: Preencha todos os campos ou elimine o que não pretendes modificar*",
           "schema": {
             "$ref": "#/element/schemas/cadastro de pratos"
