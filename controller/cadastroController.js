@@ -7,7 +7,7 @@ exports.todosCadastros = async(req,res)=>{
     try{
         const Empresas_Cadastradas = await Cadastro.find();
 
-        return res.status(302).send({Empresas_Cadastradas})
+            return res.status(302).send({Empresas_Cadastradas})
 
     }catch(erro){
 
@@ -47,16 +47,14 @@ exports.cadastrar =(req,res)=>{
 //criando o put/atualizar
 
 exports.atualizar = (req,res)=>{
-        Cadastro.findOneAndUpdate({_id:req.params.CadastroId}, req.body,{new:true}, (erro,status)=>{
+        Cadastro.findOneAndUpdate({_id:req.params.CadastroId}, req.body,{new:true}, (erro,atualizado)=>{
             if(erro){
                 res.status(400).send({
                     erro: "Falha ao Atualizar o Cadastro... Tente novamente"
                 })
             }
             else{
-               return res.status(201).send({
-                    status:"Cadastro Atualizado Com Sucesso"
-                })
+               return res.status(201).send({atualizado})
             }
         })
 }
@@ -68,7 +66,7 @@ exports.deletar = (req,res)=>{
         if(erro){
             res.status(400).send({erro:"Erro nos parâmetros! Tente novamente..."})
         }else{
-            res.status(202).json("Cadastro eliminado com sucesso")
+            res.status(202).json({conteudo:"Cadastro eliminado com sucesso"})
         }
     })
 }

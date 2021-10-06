@@ -62,12 +62,13 @@
         "responses": {
          
           "400":{
-            "description":"Dados não encontrado"
+            "details":"Dados não encontrado"
           },
-          "200":{
-            "description":"Ok"
-          }, "302":{
-            "description":"Encontrado"
+          "201":{
+            "description":"Ok"},
+
+          "302":{
+            "details":"Encontrado"
           }
         }
       }
