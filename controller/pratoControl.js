@@ -24,7 +24,7 @@ exports.buscarId = async (req,res)=>{
 
         res.status(302).send({Pratos})
     }catch(erro){
-        res.status(404).send({erro:"Prato não eonctrado! Tente novamente..."})
+        res.status(404).send({erro:"Prato não encontrado! Tente novamente..."})
     }
 }
 
@@ -35,7 +35,7 @@ exports.cadastrar =(req,res)=>{
 
     inserir.save((erro,cadastrado)=>{
         if(erro){
-            res.status(406).send({erro :"Falha ao Cadastrar-se! Tente novamente"})
+            res.status(406).send({erro :"Não Aceite! Tente novamente"})
         }
         else{
             res.status(201).json({cadastrado})

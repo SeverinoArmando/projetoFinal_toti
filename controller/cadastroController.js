@@ -7,11 +7,11 @@ exports.todosCadastros = async(req,res)=>{
     try{
         const Empresas_Cadastradas = await Cadastro.find();
 
-            return res.status(302).send({Empresas_Cadastradas})
+            return res.status(302).json({Empresas_Cadastradas})
 
     }catch(erro){
 
-        return res.status(404).send({erro:"Dados não eoncontrado... tente Cadastrar algum!"})
+        return res.status(404).json({erro:"Dados não eoncontrado... tente Cadastrar algum!"})
     }
 }
  
@@ -24,7 +24,7 @@ exports.buscarId =(req,res)=>{
             res.status(404).json({erro:"Cadastro não eoncontrado! Tente novamente..."})
         }
         else{
-            res.status(302).send({Empresa_Cadastrada})
+            res.status(302).json({Empresa_Cadastrada})
         }
     })
 }

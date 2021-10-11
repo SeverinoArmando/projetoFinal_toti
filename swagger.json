@@ -66,7 +66,6 @@
           },
           "201":{
             "description":"Ok"},
-
           "302":{
             "details":"Encontrado"
           }
@@ -214,7 +213,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Ordem de como os dados devem ser inseridos. *Atenção: No nome usuario, deve colocar-se o Id da Empresa*",
+            "description": "Ordem de como os dados devem ser inseridos. *Atenção: No espaço usuario, deve colocar-se o Id da Empresa cadastrada*",
             "required":true,
             "schema": {
               "$ref": "#/element/schemas/cadastro de pratos"
@@ -223,15 +222,15 @@
       ],
       "responses": {
         "406": {
-          "description": "Não aceite.Tente novamente"
+          "description": "Algo deu errado.! Tente novamente"
         },
         "201": {
-          "description": "Cadastrado Com Sucesso..."
+          "description": "Cadastrado com Sucesso..."
         }
       }
     },"get": {
       "tags": ["Cardápio"],
-      "summary":"Visualizar pratos cadastrados e seus respectivos cadastrantes, Empresa ou Usuário",
+      "summary":"Visualizar pratos cadastrados e seu respectivo cadastrante",
       "description": "Nessa Rota será retornada todas os Pratos cadastros pela Empresa",
       "responses": {
        
@@ -252,7 +251,7 @@
       "tags": [
         "Cardápio"
       ],
-      "summary": "Buscar Prato cadastrado uasndo o Id",
+      "summary": "Buscar Prato cadastrado usando o Id",
       "description": "Retornará somente o prato desejado com os dados do usuário cadastrante",
       "operationId": "PratoId",
       "produces": [
@@ -295,12 +294,18 @@
       ],
       "parameters": [
         {
+          "in": "path",
+          "name": "PratoId",
+          "required":true,
+          "description":"Insira o Id do prato cadastrado"
+        },
+        {
           "in": "body",
           "name": "Corpo",
           "required":true,
           "description": "Edite os campo desejado. *Atenção: Preencha todos os campos ou elimine o que não pretendes modificar*",
           "schema": {
-            "$ref": "#/element/schemas/cadastro de pratos"
+            "$ref": "#/PUT/schemas/cadastro de pratos"
           }
         }
       ],
@@ -379,6 +384,33 @@
           "usuario":{
             "type": "string"
            },
+            "nome_do_prato": { 
+            "type": "string"
+            },
+          "ingredientes": { 
+            "type": ["string"] 
+            },
+          "preco": {
+            "type": "number",
+            "min": 0
+            },
+            "quantidade":{
+              "type":"number",
+              "default":1
+            },
+          "url_foto": { 
+            "type": "string",
+            "default":"Imagem em processamento" 
+            }
+        }
+      }
+    }
+  },
+  "PUT":{
+    "schemas":{
+      "cadastro de pratos":{
+        "type":"object",
+        "properties":{ 
             "nome_do_prato": { 
             "type": "string"
             },
