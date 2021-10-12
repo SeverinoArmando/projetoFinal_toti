@@ -29,7 +29,7 @@
         ],
         "summary": "Cadastrar Empresa",
         "description": "Nessa rota é possível cadastrar-se e manipular os dados cadastrados",
-        "operationId": "CadastroId",
+        "operationId": "Cadastro",
         "consumes": [
           "application/json"
         ],
@@ -58,6 +58,7 @@
       },"get": {
         "tags": ["Cadastros"],
         "summary":"Visualizar todas as Empresas Cadatradas",
+        "operationId": "Busca",
         "description": "Nessa Rota será retornada todas as Empresas Cadastradas na Base de Dados",
         "responses": {
          
@@ -79,7 +80,7 @@
         ],
         "summary": "Buscar Valor Cadastrado Pelo Id",
         "description": "Retornará somente o valor procurado",
-        "operationId": "CadastroId",
+        "operationId": "BuscaPorId",
         "produces": [
           "application/json"
         ],
@@ -111,7 +112,7 @@
         ],
         "summary": "Atualizar cadastro",
         "description": "Nessa rota é possível atualizar dados do cadastro",
-        "operationId": "CadastroId",
+        "operationId": "atualizar",
         "consumes": [
           "application/json"
         ],
@@ -167,7 +168,7 @@
         ],
         "summary": "Eliminar cadastro pelo Id",
         "description": "",
-        "operationId": "CadastroId",
+        "operationId": "deletar",
         "produces": [
           "application/json"
         ],
@@ -202,7 +203,7 @@
       ],
       "summary": "Cadastrar Prato",
       "description": "Nessa rota é possível cadastrar seu prato",
-      "operationId": "PratoId",
+      "operationId": "novoPrato",
       "consumes": [
         "application/json"
       ],
@@ -231,6 +232,7 @@
     },"get": {
       "tags": ["Cardápio"],
       "summary":"Visualizar pratos cadastrados e seu respectivo cadastrante",
+      "operationId": "buscarPrato",
       "description": "Nessa Rota será retornada todas os Pratos cadastros pela Empresa",
       "responses": {
        
@@ -253,7 +255,7 @@
       ],
       "summary": "Buscar Prato cadastrado usando o Id",
       "description": "Retornará somente o prato desejado com os dados do usuário cadastrante",
-      "operationId": "PratoId",
+      "operationId": "buscaById",
       "produces": [
         "application/json"
       ],
@@ -285,7 +287,7 @@
       ],
       "summary": "Atualizar Prato",
       "description": "Nessa rota é possível atualizar os pratos cadastrados usando o Id do prato",
-      "operationId": "PratoId",
+      "operationId": "UpdatePrato",
       "consumes": [
         "application/json"
       ],
@@ -327,7 +329,7 @@
       ],
       "summary": "Eliminar prato cadastrado",
       "description": "Eliminar um determinado prato do cardápio",
-      "operationId": "PratoId",
+      "operationId": "eliminarPrato",
       "produces": [
         "application/json"
       ],
